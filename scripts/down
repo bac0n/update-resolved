@@ -1,0 +1,21 @@
+#!/bin/bash
+
+[[ $script_type != down ]] && exit 0
+
+# Custom script.
+case $script_context in
+init)
+  :
+  ;;
+restart)
+  :
+  ;;
+*)
+  :
+  ;;
+esac
+
+# Update systemd resolved.
+/etc/openvpn/update-resolved/update-resolved.sh
+
+exit 0
