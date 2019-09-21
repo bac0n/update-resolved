@@ -58,7 +58,7 @@ up(){
             ((SetLinkDNS[2]++))
             mesg "<6>Info: Adding dns: $b"
           fi
-        elif [[ ${b//[^.]} = ... ]]; then
+        elif [[ $b =~ ^([0-9]{1,3}[.]){3}[0-9]{1,3}$ ]]; then
           m[SetLinkDNS]="${m[SetLinkDNS]} 2 4 ${b//./ }"
           ((SetLinkDNS[2]++))
           mesg "<6>Info: Adding dns: $b"
